@@ -14,8 +14,11 @@ class Automake < Formula
   EOS
 
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}"
     system "make install"
+
+    # Use homebrew aclocal
+    rmdir share+"aclocal"
+    ln_s HOMEBREW_PREFIX+"share/aclocal", share+"aclocal"
   end
 end
