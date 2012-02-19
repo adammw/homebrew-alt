@@ -9,7 +9,7 @@ class Libtool < Formula
   depends_on 'autoconf'
 
   keg_only <<-EOS.undent
-    In order to prevent conflicts with the system-provided m4, this formula
+    In order to prevent conflicts with the system-provided libtool, this formula
     is keg-only.
   EOS
 
